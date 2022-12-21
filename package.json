@@ -1,0 +1,29 @@
+{
+  "name": "@nickgraffis/esbuild-runner",
+  "version": "0.0.2",
+  "description": "⚡️ A simple esbuild runner.",
+  "bin": {
+    "esr": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "esbuild ./index.ts --bundle --external:\"esbuild\" --platform=node --target=node14 --outfile=dist/index.js"
+  },
+  "keywords": [
+    "esbuild",
+    "runner",
+    "build",
+    "typescript",
+    "javascript"
+  ],
+  "author": "Nick Graffis <hi@nickgraffis.me>",
+  "license": "MIT",
+  "dependencies": {
+    "esbuild": "^0.16.9",
+    "yargs": "^17.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.17",
+    "@types/yargs": "^17.0.17",
+    "typescript": "^4.9.4"
+  }
+}
