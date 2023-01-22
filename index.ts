@@ -48,6 +48,7 @@ const esbuild = (args) => {
     sourcemap: args.sourcemap,
     logLevel: args.logLevel,
     format: args.format,
+    external: args.external,
   }).then((result) => {
     runner(result)
   }).catch((e) => {
@@ -57,6 +58,7 @@ const esbuild = (args) => {
 
 require('yargs')
   .command('$0', "Start the server.", (yargs: Argv) => {
+      yargs.option('external', { type: 'array', alias: 'x' })
       yargs.option('entry', { type: 'string', alias: 'e' })
       yargs.option('write', { type: 'boolean', alias: 'w', default: false })
       yargs.option('bundle', { type: 'boolean', alias: 'b', default: true })
