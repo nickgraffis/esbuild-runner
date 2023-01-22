@@ -1,6 +1,6 @@
 {
   "name": "@nickgraffis/esbuild-runner",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "⚡️ A simple esbuild runner.",
   "bin": {
     "esr": "./dist/index.js"
@@ -18,6 +18,8 @@
   "author": "Nick Graffis <hi@nickgraffis.me>",
   "license": "MIT",
   "dependencies": {
+    "@chialab/esbuild-plugin-meta-url": "^0.17.2",
+    "@chialab/esbuild-plugin-worker": "^0.17.3",
     "blessed": "^0.1.81",
     "esbuild": "^0.16.9",
     "yargs": "^17.6.2"

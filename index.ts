@@ -2,6 +2,8 @@
 import { build, BuildResult } from 'esbuild'
 import fs from 'fs'
 import { Argv } from "yargs";
+import workerPlugin from '@chialab/esbuild-plugin-worker';
+import metaUrlPlugin from '@chialab/esbuild-plugin-meta-url';
 
 // lazy import tsconfig.json if it exists
 let tsconfig: any = null
@@ -49,6 +51,10 @@ const esbuild = (args) => {
     logLevel: args.logLevel,
     format: args.format,
     external: args.external,
+    plugins: [
+      workerPlugin(),
+      metaUrlPlugin(),
+    ],
   }).then((result) => {
     runner(result)
   }).catch((e) => {
